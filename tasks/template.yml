@@ -1,0 +1,10 @@
+---
+# Template configuration files for docker
+
+- name: template is copied
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  become: true
+  loop: "{{ docker_templates_copy }}"
+  when: docker_copy_templates

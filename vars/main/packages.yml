@@ -1,0 +1,118 @@
+---
+# Remove packages: uninstall if found
+_docker_packages_remove:
+  all: []
+  CentOS_7:
+    - docker
+    - docker-client
+    - docker-client-latest
+    - docker-common
+    - docker-latest
+    - docker-latest-logrotate
+    - docker-logrotate
+    - docker-engine
+  RedHat_7:
+    - docker
+    - docker-client
+    - docker-client-latest
+    - docker-common
+    - docker-latest
+    - docker-latest-logrotate
+    - docker-logrotate
+    - docker-engine
+  CentOS_8:
+    - docker
+    - docker-client
+    - docker-client-latest
+    - docker-common
+    - docker-latest
+    - docker-latest-logrotate
+    - docker-logrotate
+    - docker-engine
+  RedHat_8:
+    - docker
+    - docker-client
+    - docker-client-latest
+    - docker-common
+    - docker-latest
+    - docker-latest-logrotate
+    - docker-logrotate
+    - docker-engine
+  Fedora_31:
+    - docker
+    - docker-client
+    - docker-client-latest
+    - docker-common
+    - docker-latest
+    - docker-latest-logrotate
+    - docker-logrotate
+    - docker-engine
+  Debian_10:
+    - docker
+    - docker-engine
+    - docker.io
+    - containerd
+    - runc
+  Ubuntu_18:
+    - docker
+    - docker-engine
+    - docker.io
+    - containerd
+    - runc
+
+# Prereq packages: they get installed first
+_docker_packages_prereq:
+  all: []
+  CentOS_7:
+    - yum-utils
+    - device-mapper-persistent-data
+    - lvm2
+  CentOS_8:
+    - yum-utils
+    - device-mapper-persistent-data
+    - lvm2
+  RedHat_7:
+    - yum-utils
+    - device-mapper-persistent-data
+    - lvm2
+  RedHat_8:
+    - yum-utils
+    - device-mapper-persistent-data
+    - lvm2
+  Fedora_31:
+    - yum-utils
+    - device-mapper-persistent-data
+    - lvm2
+  Debian_10: []
+  Ubuntu_18: []
+
+# Install packages
+_docker_packages_install:
+  CentOS_7:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+  RedHat_7:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+  CentOS_8:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+  RedHat_8:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+  Fedora_31:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+  Debian_10:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
+  Ubuntu_18:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io

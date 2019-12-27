@@ -1,0 +1,56 @@
+---
+# vars file for packages
+
+# Repo files to create
+_docker_repos_create:
+  all: []
+  CentOS_7: []
+  RedHat_7: []
+  CentOS_8: []
+  RedHat_8: []
+  Fedora_31: []
+  Debian_10: []
+  Ubuntu_18:
+    - repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
+      filename: /etc/apt/sources.list.d/docker.list
+
+# Repo files to download
+_docker_repos_download:
+  all: []
+  CentOS_7:
+    - url: "https://download.docker.com/linux/centos/docker-ce.repo"
+      sha256: "sha256:6650718e0fe5202ae7618521f695d43a8bc051c539d7570f0edbfa5b4916f218"
+      dest: "/etc/yum.repos.d/docker-ce.repo"
+  RedHat_7:
+    - url: "https://download.docker.com/linux/centos/docker-ce.repo"
+      sha256: "sha256:6650718e0fe5202ae7618521f695d43a8bc051c539d7570f0edbfa5b4916f218"
+      dest: "/etc/yum.repos.d/docker-ce.repo"
+  CentOS_8:
+    - url: "https://download.docker.com/linux/centos/docker-ce.repo"
+      sha256: "sha256:6650718e0fe5202ae7618521f695d43a8bc051c539d7570f0edbfa5b4916f218"
+      dest: "/etc/yum.repos.d/docker-ce.repo"
+  RedHat_8:
+    - url: "https://download.docker.com/linux/centos/docker-ce.repo"
+      sha256: "sha256:6650718e0fe5202ae7618521f695d43a8bc051c539d7570f0edbfa5b4916f218"
+      dest: "/etc/yum.repos.d/docker-ce.repo"
+  Fedora_31:
+    - url: "https://download.docker.com/linux/fedora/docker-ce.repo"
+      sha256: "sha256:3af973c1f2e16a032a11074eb22b440894ad4936c9ca86b666f8cf8342b7bea7"
+      dest: "/etc/yum.repos.d/docker-ce.repo"
+  Debian_10: []
+  Ubuntu_18: []
+
+# Repo RPM packages
+_docker_packages_repos:
+  all: []
+  CentOS_7:
+    - https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+  RedHat_7:
+    - https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+  CentOS_8:
+    - https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+  RedHat_8:
+    - https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+  Fedora31: []
+  Debian_10: []
+  Ubuntu_18: []
