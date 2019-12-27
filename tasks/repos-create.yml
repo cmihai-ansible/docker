@@ -22,21 +22,30 @@
 
 - name: DEB key is imported and apt file is create
   block:
-    - name: gpg is installed
+    - name: prereq apt packages are installed
       package:
-        name: gnupg
+        name:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - gnupg
+          - gnupg-agent
+          - software-properties-common
         state: present
 
     - name: apt gpg key is present
       apt_key:
         state: present
         url: "{{ item.gpgkey }}"
+        id: "{{ item.id | default(omit) }}"
+      when: item|selectattr("gpgkey", "defined")|list|length >0
 
     - name: apt repository file is created
       apt_repository:
         repo: "{{ item.repo }}"
         state: "{{ item.state | default('present') }}"
         filename: "{{ item.filename }}"
+        update_cache: true
   become: true
   when:
     - ansible_distribution == "Debian" or ansible_distribution == "Ubuntu"

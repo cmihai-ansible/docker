@@ -9,10 +9,16 @@ _docker_repos_create:
   CentOS_8: []
   RedHat_8: []
   Fedora_31: []
-  Debian_10: []
+  Debian_10:
+    - repo: "deb [arch=amd64] https://download.docker.com/linux/debian buster stable"
+      filename: "/etc/apt/sources.list.d/docker.list"
+      gpgkey: "https://download.docker.com/linux/ubuntu/gpg"
+      id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
   Ubuntu_18:
     - repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-      filename: /etc/apt/sources.list.d/docker.list
+      filename: "/etc/apt/sources.list.d/docker.list"
+      gpgkey: "https://download.docker.com/linux/ubuntu/gpg"
+      id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
 
 # Repo files to download
 _docker_repos_download:
