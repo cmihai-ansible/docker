@@ -3,12 +3,7 @@
 
 docker_remove_packages: true
 docker_enable_service: true
-docker_enable_selinux: true
 docker_copy_templates: true
-docker_firewall_configure: true
-# docker_firewall_rules:
-#   - service: ssh
-#   - port: 3389
-# docker_users:
-#   - user: devops
-#     group: docker
+docker_users:
+  - user: devops
+    group: docker

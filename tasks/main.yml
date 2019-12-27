@@ -30,7 +30,5 @@
   loop: "{{ docker_repos_download }}"
 - include: install.yml
 - include: users.yml
-- include: selinux.yml
 - include: template.yml
 - include: configure.yml
-- include: firewalld.yml

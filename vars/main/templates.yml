@@ -1,7 +1,9 @@
 ---
 # Configuration templates to copy
-_docker_templates_copy:
-  all: []
+_podman_templates_copy:
+  all:
+    - src: registries.conf.j2
+      dest: /etc/containers/registries.conf
   CentOS_7: []
   RedHat_7: []
   CentOS_8: []
