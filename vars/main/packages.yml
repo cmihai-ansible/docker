@@ -68,6 +68,7 @@ _docker_packages_prereq:
     - device-mapper-persistent-data
     - lvm2
   CentOS_8:
+    - "https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm"
     - yum-utils
     - device-mapper-persistent-data
     - lvm2
@@ -76,10 +77,10 @@ _docker_packages_prereq:
     - device-mapper-persistent-data
     - lvm2
   RedHat_8:
+    - "https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm"
     - yum-utils
     - device-mapper-persistent-data
     - lvm2
-    - "https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm"
   Fedora_31:
     - yum-utils
     - device-mapper-persistent-data
