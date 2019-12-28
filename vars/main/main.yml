@@ -37,7 +37,7 @@ docker_packages_repos: "{{ _docker_packages_repos['all']
   | union ( _docker_packages_repos[my_os]
   | default([]) ) }}"
 docker_packages_prereq: "{{ _docker_packages_prereq['all']
-  | union ( _docker_packages_prepreq[my_os]
+  | union ( _docker_packages_prereq[my_os]
   | default([]) ) }}"
 docker_packages_install: "{{ _docker_packages_install['all']
   | union ( _docker_packages_install[my_os]

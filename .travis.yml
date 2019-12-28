@@ -19,16 +19,6 @@ env:
       CONTAINER_VERSION=31
       CONTAINER_COMMAND="/usr/sbin/init"
     - >
-      CONTAINER_REGISTRY=registry.access.redhat.com/ubi7
-      CONTAINER_DISTRO=ubi
-      CONTAINER_VERSION=latest
-      CONTAINER_COMMAND="/usr/sbin/init"
-    - >
-      CONTAINER_REGISTRY=registry.access.redhat.com/ubi8
-      CONTAINER_DISTRO=ubi
-      CONTAINER_VERSION=latest
-      CONTAINER_COMMAND="/usr/sbin/init"
-    - >
       CONTAINER_DISTRO=debian
       CONTAINER_VERSION=10
       CONTAINER_COMMAND="/sbin/init"

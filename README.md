@@ -25,10 +25,10 @@ Role Variables
 ```
 docker_remove_packages: true
 docker_enable_service: true
-docker_enable_selinux: true
-docker_firewall_configure: true
-docker_firewall_rules:
-  - service:
+docker_copy_templates: true
+docker_users:
+  - user: devops
+    group: docker
 ```
 
 Dependencies
@@ -53,9 +53,10 @@ Example Playbook
       vars:
         docker_remove_packages: true
         docker_enable_service: true
-        docker_firewall_configure: true
-        docker_firewall_rules:
-          - service:
+        docker_copy_templates: true
+        docker_users:
+          - user: devops
+            group: docker
       tags: docker
 ```
 

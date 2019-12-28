@@ -10,12 +10,6 @@ CONTAINER_COMMAND="/usr/sbin/init" CONTAINER_DISTRO=centos CONTAINER_VERSION=7 m
 echo "******* Testing CentOS 8 *******"
 CONTAINER_COMMAND="/usr/sbin/init" CONTAINER_DISTRO=centos CONTAINER_VERSION=8 molecule ${COMMAND_FLAGS} test
 
-echo "******* Testing RHEL 7 *******"
-CONTAINER_COMMAND="/usr/sbin/init" CONTAINER_REGISTRY=registry.access.redhat.com/ubi7 CONTAINER_DISTRO=ubi CONTAINER_VERSION=latest molecule ${COMMAND_FLAGS} test
-
-echo "******* Testing RHEL 8 *******"
-CONTAINER_COMMAND="/usr/sbin/init" CONTAINER_REGISTRY=registry.access.redhat.com/ubi8 CONTAINER_DISTRO=ubi CONTAINER_VERSION=latest molecule ${COMMAND_FLAGS} test
-
 echo "******* Testing Debian 10 *******"
 CONTAINER_COMMAND="/sbin/init" CONTAINER_DISTRO=debian CONTAINER_VERSION=10 molecule ${COMMAND_FLAGS} test
 
