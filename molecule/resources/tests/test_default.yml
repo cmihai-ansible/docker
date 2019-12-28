@@ -1,7 +1,7 @@
 # Molecule managed
 ---
 command:
-  help:
+  docker_service:
     exit-status: 0
     exec: "systemctl is-active docker"
     stdout:

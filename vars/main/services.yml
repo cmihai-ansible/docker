@@ -1,7 +1,8 @@
 ---
 # Services to enable
 _docker_services_enable:
-  all: []
+  all:
+    - docker
   CentOS_7: []
   RedHat_7: []
   CentOS_8: []
