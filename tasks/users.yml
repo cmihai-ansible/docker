@@ -12,6 +12,6 @@
   user:
     name: "{{ item.user }}"
     append: true
-    groups: libvirt
+    groups: "{{ item.group }}"
   become: true
   loop: "{{ docker_users }}"

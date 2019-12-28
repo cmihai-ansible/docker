@@ -5,6 +5,7 @@
       rpm_key:
         state: present
         key: "{{ item.gpgkey }}"
+        fingerprint: "{{ item.fingerprint | default(omit) }}"
       when: item.gpgkey is defined
 
     - name: rpm repo file is created
