@@ -11,5 +11,6 @@
     - name: repo key is installed
       rpm_key:
         state: present
-        key: "{{ item.key }}"
+        key: "{{ item.gpgkey }}"
+      when: item|selectattr("gpgkey", "defined")|list|length >0
   become: true

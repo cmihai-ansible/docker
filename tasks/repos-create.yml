@@ -5,6 +5,7 @@
       rpm_key:
         state: present
         key: "{{ item.gpgkey }}"
+      when: item.gpgkey is defined
 
     - name: rpm repo file is created
       yum_repository:
@@ -38,7 +39,7 @@
         state: present
         url: "{{ item.gpgkey }}"
         id: "{{ item.id | default(omit) }}"
-      when: item|selectattr("gpgkey", "defined")|list|length >0
+      when: item.gpgkey is defined
 
     - name: apt repository file is created
       apt_repository:
