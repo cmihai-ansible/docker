@@ -1,11 +1,8 @@
 # Molecule managed
 ---
-command:
-  docker_service:
-    exit-status: 0
-    exec: "systemctl is-active docker"
-    stdout:
-      - "/active/"
-    stderr: []
-    timeout: 10000      # in milliseconds
-    skip: false
+service:
+  docker:
+    enabled: true
+group:
+  docker:
+    exists: true

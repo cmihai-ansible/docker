@@ -36,6 +36,44 @@ provisioner:
     verify: ../resources/playbooks/verify.yml
   lint:
     name: ansible-lint
+scenario:
+  name: default  # optional
+  create_sequence:
+    - dependency
+    - create
+    - prepare
+  check_sequence:
+    - dependency
+    - cleanup
+    - destroy
+    - create
+    - prepare
+    - converge
+    - check
+    - destroy
+  converge_sequence:
+    - dependency
+    - create
+    - prepare
+    - converge
+  destroy_sequence:
+    - dependency
+    - cleanup
+    - destroy
+  test_sequence:
+    - lint
+    - dependency
+    # - cleanup
+    # - destroy
+    - syntax
+    - create
+    - prepare
+    - converge
+    - idempotence
+    - side_effect
+    - verify
+    # - cleanup
+    # - destroy
 verifier:
   name: goss
   directory: ../resources/tests
