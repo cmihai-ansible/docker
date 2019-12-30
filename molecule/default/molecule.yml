@@ -36,6 +36,10 @@ provisioner:
     verify: ../resources/playbooks/verify.yml
   lint:
     name: ansible-lint
+  inventory:
+    host_vars:
+      instance:
+        ansible_user: ansible
 scenario:
   name: default  # optional
   create_sequence:
