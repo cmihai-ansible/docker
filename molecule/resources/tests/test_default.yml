@@ -1,8 +1,5 @@
 # Molecule managed
 ---
-service:
-  docker:
-    enabled: true
 group:
   docker:
     exists: true
