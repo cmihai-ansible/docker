@@ -4,7 +4,7 @@
     - name: repo file downloaded to /etc/yum.repos.d
       get_url:
         url: "{{ item.url }}"
-        checksum: "{{ item.sha256 | default(omit) }}"
+        checksum: "{{ item.checksum | default(omit) }}"
         dest: "{{ item.dest }}"
         mode: "{{ item.mode | default('0644') }}"
 
@@ -14,3 +14,7 @@
         key: "{{ item.gpgkey }}"
       when: item|selectattr("gpgkey", "defined")|list|length >0
   become: true
+  when:
+    - ansible_distribution == "RedHat"
+      or ansible_distribution == "CentOS"
+      or ansible_distribution == "Fedora"
